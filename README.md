@@ -4,6 +4,7 @@
 
 Repo contains few folders with prepared react applications and pre-installed libraries:
 
-- Structure for S type of web applications
-- Structure for M type of web applications
-- Structure for L type of web applications
+- S type of web applications in [structure-s](structure-s/readme.md).
+- M type of web applications in [structure-m](structure-m/readme.md).
+- L type of web applications in [structure-l](structure-l/readme.md).
+- Custom type of web applications in [structure-custom](structure-custom/readme.md).
