@@ -58,7 +58,7 @@ It should help us on doign stuff in parralel, hanlding 'takeLatest', 'takeEvery'
 Reselect lib should help us to save on performance. Cache all requests to state with additional logic layer on top. Cache selectors if none of state changes has happened.
 Read 'Motivation' section in https://github.com/reduxjs/reselect.
 
-to be written..
+Check the `../src/app/redux/selectors` folder for samples.
 
 ## Use of hooks
 
