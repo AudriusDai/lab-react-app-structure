@@ -1,15 +1,12 @@
-const sample = (state = [], action: any) => {
+import initialState from "../initialState";
+
+const samples = (state = initialState.samples, action: any) => {
   switch (action.type) {
     case "ADD_SAMPLE":
-      return [
-        ...state,
-        {
-          id: action.id,
-        },
-      ];
+      return [...state, action.data.sample];
     default:
       return state;
   }
 };
 
-export default sample;
+export default samples;

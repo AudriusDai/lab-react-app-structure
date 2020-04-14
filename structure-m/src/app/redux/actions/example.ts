@@ -1,4 +1,4 @@
-export const addExample = (text: any) => ({
+export const addExample = (example: any) => ({
   type: "ADD_EXAMPLE",
-  text,
+  data: { example },
 });
