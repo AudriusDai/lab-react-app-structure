@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { connect } from "react-redux";
+import { selectSamples } from "../../redux/selectors";
 
 type SampleTableProps = {
   samples?: Array<any>;
@@ -25,7 +26,7 @@ SampleTable.defaultProps = {
 };
 
 function mapStateToProps(state: any) {
-  return { samples: state.samples };
+  return { samples: selectSamples(state) };
 }
 
 export default connect(mapStateToProps, null)(SampleTable);
