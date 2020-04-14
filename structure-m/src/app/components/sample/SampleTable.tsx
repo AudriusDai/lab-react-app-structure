@@ -1,11 +1,31 @@
 import React, { FC } from "react";
+import { connect } from "react-redux";
 
-interface IProps {}
-
-const SampleTable: FC<IProps> = (props) => {
-  return <div>Sample table.</div>;
+type SampleTableProps = {
+  samples?: Array<any>;
 };
 
-SampleTable.defaultProps = {};
+const SampleTable: FC<SampleTableProps> = ({ samples }) => {
+  return (
+    <div>
+      <h3>Sample table.</h3>
+      {samples &&
+        samples.map((x: any) => (
+          <div>
+            {" "}
+            {x.name} {x.description}{" "}
+          </div>
+        ))}
+    </div>
+  );
+};
 
-export default SampleTable;
+SampleTable.defaultProps = {
+  samples: [],
+};
+
+function mapStateToProps(state: any) {
+  return { samples: state.samples };
+}
+
+export default connect(mapStateToProps, null)(SampleTable);

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { default as sample } from "./sample";
-import { default as example } from "./example";
+import { default as samples } from "./sample";
+import { default as examples } from "./example";
 
 export default combineReducers({
-  sample,
-  example,
+  samples,
+  examples,
 });
