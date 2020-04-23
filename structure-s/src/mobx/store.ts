@@ -1,3 +1,4 @@
+import { observable, computed, autorun } from "mobx";
 interface todo {
   completed: boolean;
   task: string;
@@ -9,7 +10,7 @@ class ObservableTodoStore {
   @observable pendingRequests = 0;
 
   constructor() {
-    mobx.autorun(() => console.log(this.report));
+    autorun(() => console.log(this.report));
   }
 
   @computed get completedTodosCount() {

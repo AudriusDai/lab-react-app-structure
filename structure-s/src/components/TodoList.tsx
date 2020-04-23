@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TodoView from "./TodoView";
+import { observer } from "mobx-react";
 
 interface IProps {
   store: any;
