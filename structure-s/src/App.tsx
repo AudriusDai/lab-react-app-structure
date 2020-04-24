@@ -1,10 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { FC } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
-import Store from "./mobx/store";
+import Store from "./mobx/todoStore";
 
-function App() {
+const App: FC = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,6 +11,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

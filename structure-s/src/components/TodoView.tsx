@@ -1,36 +1,33 @@
-import React, { Component } from "react";
+import React, { FC } from "react";
 import { observer } from "mobx-react";
 
-interface IProps {
+interface TodoViewProps {
   todo: any;
 }
 
-@observer
-class TodoView extends Component<IProps> {
-  render() {
-    const todo = this.props.todo;
-    return (
-      <li onDoubleClick={this.onRename}>
-        <input
-          type="checkbox"
-          checked={todo.completed}
-          onChange={this.onToggleCompleted}
-        />
-        {todo.task}
-        {todo.assignee ? <small>{todo.assignee.name}</small> : null}
-      </li>
-    );
-  }
-
-  onToggleCompleted = () => {
-    const todo = this.props.todo;
+const TodoView: FC<TodoViewProps> = (props) => {
+  const onToggleCompleted = () => {
+    const todo = props.todo;
     todo.completed = !todo.completed;
   };
 
-  onRename = () => {
-    const todo = this.props.todo;
+  const onRename = () => {
+    const todo = props.todo;
     todo.task = prompt("Task name", todo.task) || todo.task;
   };
-}
 
-export default TodoView;
+  const todo = props.todo;
+  return (
+    <li onDoubleClick={onRename}>
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={onToggleCompleted}
+      />
+      {todo.task}
+      {todo.assignee ? <small>{todo.assignee.name}</small> : null}
+    </li>
+  );
+};
+
+export default observer(TodoView);
