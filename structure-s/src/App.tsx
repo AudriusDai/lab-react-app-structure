@@ -1,13 +1,15 @@
 import React, { FC } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
-import Store from "./mobx/todoStore";
+import { RootStoreContext } from "./mobx/rootStore";
 
 const App: FC = () => {
+  const { todoStore } = React.useContext(RootStoreContext);
+
   return (
     <div className="App">
       <header className="App-header">
-        <TodoList store={Store} />
+        <TodoList store={todoStore} />
       </header>
     </div>
   );
